@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gardient"
+    tools:context=".MainActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="92dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/homeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="11dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="HOME"
+                android:background="@drawable/round_rectangle"
+                android:paddingLeft="4dp"
+                android:paddingEnd="4dp"
+                android:textColor="@color/black4"
+                android:textSize="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/muscleBuildingImg"
+                android:layout_width="390dp"
+                android:layout_height="189dp"
+                android:layout_marginTop="12dp"
+                android:layout_below="@id/homeTV"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/homeTV"
+                app:srcCompat="@drawable/frontrack" />
+
+
+            <TextView
+                android:id="@+id/muscleBuildingTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="MUSCLE BUILDING"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/muscleBuildingImg"
+                app:layout_constraintEnd_toEndOf="@+id/muscleBuildingImg"
+                app:layout_constraintStart_toStartOf="@+id/muscleBuildingImg"
+                app:layout_constraintTop_toTopOf="@+id/muscleBuildingImg" />
+
+
+            <ImageView
+                android:id="@+id/strengthImg"
+                android:layout_width="190dp"
+                android:layout_height="226dp"
+                android:layout_below="@id/homeTV"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="11dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/muscleBuildingImg"
+                app:srcCompat="@drawable/strength" />
+
+            <TextView
+                android:id="@+id/strengthTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="STRENGTH"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/strengthImg"
+                app:layout_constraintEnd_toEndOf="@+id/strengthImg"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintStart_toStartOf="@+id/strengthImg"
+                app:layout_constraintTop_toTopOf="@+id/strengthImg"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/cardioImg"
+                android:layout_width="190dp"
+                android:layout_height="226dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="11dp"
+                android:layout_below="@id/homeTV"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/muscleBuildingImg"
+                app:srcCompat="@drawable/what_is_cardio" />
+
+            <TextView
+                android:id="@+id/cardioTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="CARDIO"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cardioImg"
+                app:layout_constraintEnd_toEndOf="@+id/cardioImg"
+                app:layout_constraintStart_toStartOf="@+id/cardioImg"
+                app:layout_constraintTop_toTopOf="@+id/cardioImg" />
+
+            <ImageView
+                android:id="@+id/yogaImg"
+                android:layout_width="190dp"
+                android:layout_height="226dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginStart="11dp"
+                android:layout_below="@id/homeTV"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/strengthImg"
+                app:srcCompat="@drawable/yoga" />
+
+            <TextView
+                android:id="@+id/yogaTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="YOGA"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/yogaImg"
+                app:layout_constraintEnd_toEndOf="@+id/yogaImg"
+                app:layout_constraintHorizontal_bias="0.58"
+                app:layout_constraintStart_toStartOf="@+id/yogaImg"
+                app:layout_constraintTop_toTopOf="@+id/yogaImg"
+                app:layout_constraintVertical_bias="0.492" />
+
+            <ImageView
+                android:id="@+id/calisthenicsImg"
+                android:layout_width="190dp"
+                android:layout_height="226dp"
+                android:layout_below="@id/homeTV"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="11dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardioImg"
+                app:srcCompat="@drawable/calisthenics" />
+
+            <TextView
+                android:id="@+id/calisthenicsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="CALISTHENICS"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/calisthenicsImg"
+                app:layout_constraintEnd_toEndOf="@+id/calisthenicsImg"
+                app:layout_constraintStart_toStartOf="@+id/calisthenicsImg"
+                app:layout_constraintTop_toTopOf="@+id/calisthenicsImg" />
+
+            <ImageView
+                android:id="@+id/dietImg"
+                android:layout_width="390dp"
+                android:layout_height="189dp"
+                android:background="@drawable/diet"
+                android:scaleType="fitXY"
+                android:layout_marginTop="11dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/yogaImg" />
+
+            <TextView
+                android:id="@+id/dietTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="DIET"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/dietImg"
+                app:layout_constraintHorizontal_bias="0.081"
+                app:layout_constraintStart_toStartOf="@+id/dietImg"
+                app:layout_constraintTop_toTopOf="@+id/dietImg" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
