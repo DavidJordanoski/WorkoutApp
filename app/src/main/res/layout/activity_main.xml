@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gardient"
+    android:background="@drawable/black_background"
     tools:context=".MainActivity">
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="92dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -23,13 +23,13 @@
                 android:id="@+id/homeTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="11dp"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="HOME"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/round_rectangle"
+                android:fontFamily="@font/montserrat_bold"
                 android:paddingLeft="4dp"
                 android:paddingEnd="4dp"
+                android:text="HOME"
                 android:textColor="@color/black4"
                 android:textSize="30dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -39,9 +39,9 @@
                 android:id="@+id/muscleBuildingImg"
                 android:layout_width="390dp"
                 android:layout_height="189dp"
-                android:layout_marginTop="12dp"
                 android:layout_below="@id/homeTV"
                 android:layout_centerInParent="true"
+                android:layout_marginTop="12dp"
                 android:scaleType="fitXY"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -95,9 +95,9 @@
                 android:id="@+id/cardioImg"
                 android:layout_width="190dp"
                 android:layout_height="226dp"
+                android:layout_below="@id/homeTV"
                 android:layout_marginTop="11dp"
                 android:layout_marginEnd="11dp"
-                android:layout_below="@id/homeTV"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/muscleBuildingImg"
@@ -120,9 +120,9 @@
                 android:id="@+id/yogaImg"
                 android:layout_width="190dp"
                 android:layout_height="226dp"
-                android:layout_marginTop="11dp"
-                android:layout_marginStart="11dp"
                 android:layout_below="@id/homeTV"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="11dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/strengthImg"
@@ -172,9 +172,9 @@
                 android:id="@+id/dietImg"
                 android:layout_width="390dp"
                 android:layout_height="189dp"
+                android:layout_marginTop="11dp"
                 android:background="@drawable/diet"
                 android:scaleType="fitXY"
-                android:layout_marginTop="11dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/yogaImg" />
@@ -192,6 +192,20 @@
                 app:layout_constraintHorizontal_bias="0.081"
                 app:layout_constraintStart_toStartOf="@+id/dietImg"
                 app:layout_constraintTop_toTopOf="@+id/dietImg" />
+
+            <TextView
+                android:id="@+id/tvUser"
+                android:layout_width="168dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="DIET"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.935"
+                app:layout_constraintStart_toEndOf="@+id/homeTV"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
