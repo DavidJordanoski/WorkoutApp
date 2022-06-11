@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">WorkoutApp</string>
+    <string name="muscle">
+        Push Up	3	30s	None
+        Superman	3	30s	None
+        Zottoman Hand Curl	3	30s	None
+        Side Bend	3	30s	None
+        Sit Up	3	30s	2min</string>
 </resources>

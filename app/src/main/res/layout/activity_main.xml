@@ -35,6 +35,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
             <ImageView
                 android:id="@+id/muscleBuildingImg"
                 android:layout_width="390dp"
@@ -44,10 +45,10 @@
                 android:layout_marginTop="12dp"
                 android:scaleType="fitXY"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.476"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/homeTV"
                 app:srcCompat="@drawable/frontrack" />
-
 
             <TextView
                 android:id="@+id/muscleBuildingTV"
@@ -169,29 +170,31 @@
                 app:layout_constraintTop_toTopOf="@+id/calisthenicsImg" />
 
             <ImageView
-                android:id="@+id/dietImg"
+                android:id="@+id/fatLossImg"
                 android:layout_width="390dp"
-                android:layout_height="189dp"
+                android:layout_height="200dp"
                 android:layout_marginTop="11dp"
-                android:background="@drawable/diet"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/fat_loss"
                 android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/yogaImg" />
 
             <TextView
-                android:id="@+id/dietTv"
+                android:id="@+id/fatLossTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="80dp"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="DIET"
+                android:text="FAT LOSS"
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="@+id/dietImg"
-                app:layout_constraintHorizontal_bias="0.081"
-                app:layout_constraintStart_toStartOf="@+id/dietImg"
-                app:layout_constraintTop_toTopOf="@+id/dietImg" />
+                app:layout_constraintEnd_toEndOf="@+id/fatLossImg"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="@+id/fatLossImg"
+                app:layout_constraintTop_toTopOf="@+id/fatLossImg" />
 
             <TextView
                 android:id="@+id/tvUser"
