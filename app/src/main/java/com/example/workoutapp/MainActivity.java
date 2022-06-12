@@ -91,9 +91,9 @@ public class MainActivity extends AppCompatActivity {
         fatLoss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String yogaProgram = "FatLoss";
+                String fatLossProgram = "FatLoss";
                 Intent intent = new Intent(MainActivity.this,ProgramActivity.class);
-                intent.putExtra("fatLoss",yogaProgram);
+                intent.putExtra("fatLoss",fatLossProgram);
                 startActivity(intent);
             }
         });
