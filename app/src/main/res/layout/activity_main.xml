@@ -7,6 +7,9 @@
     android:background="@drawable/black_background"
     tools:context=".MainActivity">
 
+    <include
+        android:id="@+id/homeToolbar"
+        layout="@layout/toolbar"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,12 +22,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <TextView
                 android:id="@+id/homeTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="11dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="60dp"
                 android:background="@drawable/round_rectangle"
                 android:fontFamily="@font/montserrat_bold"
                 android:paddingLeft="4dp"
@@ -32,9 +35,10 @@
                 android:text="HOME"
                 android:textColor="@color/black4"
                 android:textSize="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.052"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <ImageView
                 android:id="@+id/muscleBuildingImg"
@@ -196,19 +200,6 @@
                 app:layout_constraintStart_toStartOf="@+id/fatLossImg"
                 app:layout_constraintTop_toTopOf="@+id/fatLossImg" />
 
-            <TextView
-                android:id="@+id/tvUser"
-                android:layout_width="168dp"
-                android:layout_height="28dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="DIET"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.935"
-                app:layout_constraintStart_toEndOf="@+id/homeTV"
-                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
