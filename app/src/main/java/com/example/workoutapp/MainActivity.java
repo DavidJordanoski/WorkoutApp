@@ -18,17 +18,19 @@ import android.widget.TextView;
 import com.example.workoutapp.roomdatabase.User;
 import com.example.workoutapp.roomdatabase.UserDAO;
 import com.example.workoutapp.roomdatabase.UserDataBase;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
     private User user;
-    private TextView tvUser;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         user = (User) getIntent().getSerializableExtra("User");
 
         Toolbar toolbar = findViewById(R.id.homeToolbar);
