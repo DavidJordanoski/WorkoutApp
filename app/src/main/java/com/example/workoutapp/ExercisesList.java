@@ -1,27 +1,15 @@
 package com.example.workoutapp;
 
 public class ExercisesList {
-    private String day;
-    private String muscleGroup;
+    private String exercisename;
 
-    public ExercisesList(String day, String muscleGroup) {
-        this.day = day;
-        this.muscleGroup = muscleGroup;
+
+
+    public String getExerciseName() {
+        return exercisename;
     }
 
-    public String getDay() {
-        return day;
-    }
-
-    public void setDay(String day) {
-        this.day = day;
-    }
-
-    public String getMuscleGroup() {
-        return muscleGroup;
-    }
-
-    public void setMuscleGroup(String muscleGroup) {
-        this.muscleGroup = muscleGroup;
+    public void setExerciseName(String exerciseName) {
+        this.exercisename = exerciseName;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.workoutapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -14,6 +22,8 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
 
     private ArrayList<ExercisesList> exercisesLists;
     private RecyclerView recyclerView;
+    FirebaseFirestore db;
+    WorkoutAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +31,14 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
         setContentView(R.layout.activity_program);
         recyclerView = findViewById(R.id.recyclerView);
         exercisesLists = new ArrayList<>();
+        db = FirebaseFirestore.getInstance();
+
+        adapter = new WorkoutAdapter(exercisesLists, this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(adapter);
+
         Intent intent = getIntent();
         String muscle = intent.getStringExtra("muscle");
         String strength = intent.getStringExtra("strength");
@@ -42,7 +60,7 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
             setFatLoss();
         }
 
-        setAdapter();
+
     }
 
     private void setAdapter() {
@@ -54,58 +72,49 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
     }
 
     private void setFatLoss() {
-        exercisesLists.add(new ExercisesList("Monday", "HIIT Cardio I"));
-        exercisesLists.add(new ExercisesList("Rest", "Rest"));
-        exercisesLists.add(new ExercisesList("Wednesday", "HIIT Cardio II"));
-        exercisesLists.add(new ExercisesList("Rest", "Rest"));
-        exercisesLists.add(new ExercisesList("Friday", "HIIT Cardio III"));
+
     }
 
     private void setCalisthenics() {
-        exercisesLists.add(new ExercisesList("Monday", "HIIT Cardio I"));
+
+        db.collection("musclebuilding")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            Log.e("Firestore error",error.getMessage());
+                            return;
+                        }
+                        for (DocumentChange dc : value.getDocumentChanges()){
+                            if (dc.getType() == DocumentChange.Type.ADDED){
+                                exercisesLists.add(dc.getDocument().toObject(ExercisesList.class));
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                });
+
+        /*exercisesLists.add(new ExercisesList("Monday", "HIIT Cardio I"));
         exercisesLists.add(new ExercisesList("Rest", "Rest"));
         exercisesLists.add(new ExercisesList("Wednesday", "HIIT Cardio II"));
         exercisesLists.add(new ExercisesList("Rest", "Rest"));
-        exercisesLists.add(new ExercisesList("Friday", "HIIT Cardio III"));
+        exercisesLists.add(new ExercisesList("Friday", "HIIT Cardio III"));*/
     }
 
     private void setYoga() {
-        exercisesLists.add(new ExercisesList("Day 1", "Yoga I"));
-        exercisesLists.add(new ExercisesList("Day 2", "Yoga II"));
-        exercisesLists.add(new ExercisesList("Day 3", "Yoga III"));
-        exercisesLists.add(new ExercisesList("Day 4", "Yoga IV"));
-        exercisesLists.add(new ExercisesList("Day 5", "Rest Day"));
-        exercisesLists.add(new ExercisesList("Day 6", "Yoga V"));
-        exercisesLists.add(new ExercisesList("Day 7", "Yoga VI"));
-        exercisesLists.add(new ExercisesList("Day 8", "Yoga VII"));
-        exercisesLists.add(new ExercisesList("Day 9", "Yoga VIII"));
-        exercisesLists.add(new ExercisesList("Day 10", "Yoga IX"));
+
     }
 
     private void setCardio() {
-        exercisesLists.add(new ExercisesList("Monday", "HIIT Cardio I"));
-        exercisesLists.add(new ExercisesList("Rest", "Rest"));
-        exercisesLists.add(new ExercisesList("Wednesday", "HIIT Cardio II"));
-        exercisesLists.add(new ExercisesList("Rest", "Rest"));
-        exercisesLists.add(new ExercisesList("Friday", "HIIT Cardio III"));
+
     }
 
     private void setStrength() {
-        exercisesLists.add(new ExercisesList("Day 1", "Lower Strength"));
-        exercisesLists.add(new ExercisesList("Day 2", "Upper Strength"));
-        exercisesLists.add(new ExercisesList("Day 3", "Rest Day"));
-        exercisesLists.add(new ExercisesList("Day 4", "Lower Hypertrophy"));
-        exercisesLists.add(new ExercisesList("Day 5", "Upper Hypertrophy"));
+
     }
 
     private void setMuscleBuilding() {
-        exercisesLists.add(new ExercisesList("Monday", "Chest and Triceps"));
-        exercisesLists.add(new ExercisesList("Tuesday", "Back and Biceps"));
-        exercisesLists.add(new ExercisesList("Wednesday", "Rest Day/Cardio"));
-        exercisesLists.add(new ExercisesList("Thursday", "Shoulders and Forearms"));
-        exercisesLists.add(new ExercisesList("Friday", "Legs"));
-        exercisesLists.add(new ExercisesList("Saturday", "Rest Day/Cardio"));
-        exercisesLists.add(new ExercisesList("Sunday", "Rest"));
+
     }
 
     @Override
