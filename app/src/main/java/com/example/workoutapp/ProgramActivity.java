@@ -2,6 +2,7 @@ package com.example.workoutapp;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +25,7 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
     private RecyclerView recyclerView;
     FirebaseFirestore db;
     WorkoutAdapter adapter;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,9 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
         recyclerView = findViewById(R.id.recyclerView);
         exercisesLists = new ArrayList<>();
         db = FirebaseFirestore.getInstance();
+
+        toolbar = findViewById(R.id.workoutToolbar);
+
 
         adapter = new WorkoutAdapter(exercisesLists, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
@@ -59,69 +64,139 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
         } else if (fatLoss != null) {
             setFatLoss();
         }
-
-
-    }
-
-    private void setAdapter() {
-        WorkoutAdapter adapter = new WorkoutAdapter(exercisesLists, this);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapter);
     }
 
     private void setFatLoss() {
-
-    }
-
-    private void setCalisthenics() {
-
-        db.collection("musclebuilding")
+        toolbar.setTitle("Fat loss Programs");
+        setSupportActionBar(toolbar);
+        db.collection("fatloss")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                         if (error != null) {
-                            Log.e("Firestore error",error.getMessage());
+                            Log.e("Firestore error", error.getMessage());
                             return;
                         }
-                        for (DocumentChange dc : value.getDocumentChanges()){
-                            if (dc.getType() == DocumentChange.Type.ADDED){
+                        for (DocumentChange dc : value.getDocumentChanges()) {
+                            if (dc.getType() == DocumentChange.Type.ADDED) {
                                 exercisesLists.add(dc.getDocument().toObject(ExercisesList.class));
                             }
                             adapter.notifyDataSetChanged();
                         }
                     }
                 });
+    }
 
-        /*exercisesLists.add(new ExercisesList("Monday", "HIIT Cardio I"));
-        exercisesLists.add(new ExercisesList("Rest", "Rest"));
-        exercisesLists.add(new ExercisesList("Wednesday", "HIIT Cardio II"));
-        exercisesLists.add(new ExercisesList("Rest", "Rest"));
-        exercisesLists.add(new ExercisesList("Friday", "HIIT Cardio III"));*/
+    private void setCalisthenics() {
+        toolbar.setTitle("Calisthenics Programs");
+        setSupportActionBar(toolbar);
+        db.collection("calisthenics")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            Log.e("Firestore error", error.getMessage());
+                            return;
+                        }
+                        for (DocumentChange dc : value.getDocumentChanges()) {
+                            if (dc.getType() == DocumentChange.Type.ADDED) {
+                                exercisesLists.add(dc.getDocument().toObject(ExercisesList.class));
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                });
     }
 
     private void setYoga() {
-
+        toolbar.setTitle("Yoga Programs");
+        setSupportActionBar(toolbar);
+        db.collection("yoga")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            Log.e("Firestore error", error.getMessage());
+                            return;
+                        }
+                        for (DocumentChange dc : value.getDocumentChanges()) {
+                            if (dc.getType() == DocumentChange.Type.ADDED) {
+                                exercisesLists.add(dc.getDocument().toObject(ExercisesList.class));
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                });
     }
 
     private void setCardio() {
-
+        toolbar.setTitle("Cardio Programs");
+        setSupportActionBar(toolbar);
+        db.collection("cardio")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            Log.e("Firestore error", error.getMessage());
+                            return;
+                        }
+                        for (DocumentChange dc : value.getDocumentChanges()) {
+                            if (dc.getType() == DocumentChange.Type.ADDED) {
+                                exercisesLists.add(dc.getDocument().toObject(ExercisesList.class));
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                });
     }
 
     private void setStrength() {
-
+        toolbar.setTitle("Strength Programs");
+        setSupportActionBar(toolbar);
+        db.collection("strength")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            Log.e("Firestore error", error.getMessage());
+                            return;
+                        }
+                        for (DocumentChange dc : value.getDocumentChanges()) {
+                            if (dc.getType() == DocumentChange.Type.ADDED) {
+                                exercisesLists.add(dc.getDocument().toObject(ExercisesList.class));
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                });
     }
 
     private void setMuscleBuilding() {
-
+        toolbar.setTitle("Muscle Building Programs");
+        setSupportActionBar(toolbar);
+        db.collection("musclebuilding")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            Log.e("Firestore error", error.getMessage());
+                            return;
+                        }
+                        for (DocumentChange dc : value.getDocumentChanges()) {
+                            if (dc.getType() == DocumentChange.Type.ADDED) {
+                                exercisesLists.add(dc.getDocument().toObject(ExercisesList.class));
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                });
     }
 
     @Override
     public void onItemClick(int position) {
-        Intent intent = new Intent(ProgramActivity.this,WorkoutDetailsActivity.class);
-        intent.putExtra("WorkoutName",exercisesLists.get(position).getExerciseName());
-        intent.putExtra("WorkoutDescription",exercisesLists.get(position).getExerciseDescription());
+        Intent intent = new Intent(ProgramActivity.this, WorkoutDetailsActivity.class);
+        intent.putExtra("WorkoutName", exercisesLists.get(position).getExerciseName());
+        intent.putExtra("WorkoutDescription", exercisesLists.get(position).getExerciseDescription());
         startActivity(intent);
     }
 }
