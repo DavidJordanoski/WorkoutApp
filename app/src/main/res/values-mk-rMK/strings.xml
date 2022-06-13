@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Одберете се</string>
+    <string name="home">ДОМА</string>
+    <string name="sign_in">Најави се</string>
+    <string name="don_t_have_an_account_sign_up">Немате сметка? Пријавете се</string>
+    <string name="password">Лозинка</string>
+    <string name="email">Е-пошта</string>
+    <string name="sign_up">Пријави се</string>
+    <string name="confirm_password">Потврдете ја лозинката</string>
+    <string name="already_have_an_account_sign_in">Веќе имате сметка? Најавете се</string>
+    <string name="username">Корисничко име</string>
+    <string name="muscle_building">ГРАДЕЊЕ НА МУСКУЛОТ</string>
+    <string name="strength">СИЛА</string>
+    <string name="cardio">КАРДИО</string>
+    <string name="yoga">ЈОГА</string>
+    <string name="calisthenics">КАЛИСТЕНИКА</string>
+    <string name="fat_loss">ГУБЕЊЕ НА МАСТИ</string>
+    <string name="logout">Одјави се</string>
+    <string name="muscle_building_program">Програми за градење мускули</string>
+    <string name="strength_program">Програми за сила</string>
+    <string name="yoga_program">Програми за јога</string>
+    <string name="cardio_program">Кардио програмиams</string>
+    <string name="calisthenics_program">Програми за калистеника</string>
+    <string name="fat_loss_program">Програми за губење маснотии</string>
+    <string name="welcome">Добредојдовте,</string>
+
+</resources>

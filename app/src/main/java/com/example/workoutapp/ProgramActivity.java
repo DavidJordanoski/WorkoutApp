@@ -67,7 +67,7 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
     }
 
     private void setFatLoss() {
-        toolbar.setTitle("Fat loss Programs");
+        toolbar.setTitle(R.string.fat_loss_program);
         setSupportActionBar(toolbar);
         db.collection("fatloss")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -88,7 +88,7 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
     }
 
     private void setCalisthenics() {
-        toolbar.setTitle("Calisthenics Programs");
+        toolbar.setTitle(R.string.calisthenics_program);
         setSupportActionBar(toolbar);
         db.collection("calisthenics")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -109,7 +109,7 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
     }
 
     private void setYoga() {
-        toolbar.setTitle("Yoga Programs");
+        toolbar.setTitle(R.string.yoga_program);
         setSupportActionBar(toolbar);
         db.collection("yoga")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -130,7 +130,7 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
     }
 
     private void setCardio() {
-        toolbar.setTitle("Cardio Programs");
+        toolbar.setTitle(R.string.cardio_program);
         setSupportActionBar(toolbar);
         db.collection("cardio")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -151,7 +151,7 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
     }
 
     private void setStrength() {
-        toolbar.setTitle("Strength Programs");
+        toolbar.setTitle(R.string.strength_program);
         setSupportActionBar(toolbar);
         db.collection("strength")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -172,7 +172,7 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
     }
 
     private void setMuscleBuilding() {
-        toolbar.setTitle("Muscle Building Programs");
+        toolbar.setTitle(R.string.muscle_building_program);
         setSupportActionBar(toolbar);
         db.collection("musclebuilding")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {

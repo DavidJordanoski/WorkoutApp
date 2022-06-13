@@ -1,10 +1,27 @@
 <resources>
     <string name="app_name">Get Fit</string>
-    <string name="home">Home</string>
-    <string name="muscle">
-        Push Up	3	30s	None
-        Superman	3	30s	None
-        Zottoman Hand Curl	3	30s	None
-        Side Bend	3	30s	None
-        Sit Up	3	30s	2min</string>
+    <string name="home">HOME</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t Have an Account? Sign Up</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account_sign_in">Already Have an Account? Sign in</string>
+    <string name="username">Username</string>
+    <string name="muscle_building">MUSCLE BUILDING</string>
+    <string name="strength">STRENGTH</string>
+    <string name="cardio">CARDIO</string>
+    <string name="yoga">YOGA</string>
+    <string name="calisthenics">CALISTHENICS</string>
+    <string name="fat_loss">FAT LOSS</string>
+    <string name="logout">Logout</string>
+    <string name="muscle_building_program">Muscle Building Programs</string>
+    <string name="strength_program">Strength Programs</string>
+    <string name="yoga_program">Yoga Programs</string>
+    <string name="cardio_program">Cardio Programs</string>
+    <string name="calisthenics_program">Calisthenics Programs</string>
+    <string name="fat_loss_program">Fat loss Programs</string>
+    <string name="welcome">Welcome,</string>
+
 </resources>

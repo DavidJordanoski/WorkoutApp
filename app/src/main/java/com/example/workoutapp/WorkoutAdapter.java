@@ -16,7 +16,7 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.MyViewHo
     private final OnClickListener onClickListener;
     private ArrayList<ExercisesList> exercisesList;
 
-    public WorkoutAdapter(ArrayList<ExercisesList> exercisesList,OnClickListener onClickListener){
+    public WorkoutAdapter(ArrayList<ExercisesList> exercisesList, OnClickListener onClickListener) {
         this.exercisesList = exercisesList;
         this.onClickListener = onClickListener;
     }
@@ -40,7 +40,8 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView exerciseName,exerciseDescription;
+        private TextView exerciseName, exerciseDescription;
+
         public MyViewHolder(@NonNull View view) {
             super(view);
             exerciseName = view.findViewById(R.id.workoutNameTextView);
@@ -48,9 +49,9 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.MyViewHo
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(onClickListener != null){
+                    if (onClickListener != null) {
                         int position = getAdapterPosition();
-                        if (position != RecyclerView.NO_POSITION){
+                        if (position != RecyclerView.NO_POSITION) {
                             onClickListener.onItemClick(position);
                         }
                     }

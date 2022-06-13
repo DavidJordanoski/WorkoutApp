@@ -73,11 +73,11 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (editTextPassword.length() >= 8) {
 
-                        progressBar.setVisibility(View.VISIBLE);
-                        fireStoreDataBase();
-                        roomDatabase();
-                        Intent moveToLogin = new Intent(RegisterActivity.this, LoginActivity.class);
-                        startActivity(moveToLogin);
+                    progressBar.setVisibility(View.VISIBLE);
+                    fireStoreDataBase();
+                    roomDatabase();
+                    Intent moveToLogin = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(moveToLogin);
 
 
                 } else {
@@ -133,7 +133,7 @@ public class RegisterActivity extends AppCompatActivity {
         String password = editTextPassword.getText().toString().trim();
         String passwordConfirm = editTextConfirmPassword.getText().toString().trim();
 
-            User user = new User(userName, password, email);
-            userDAO.insert(user);
+        User user = new User(userName, password, email);
+        userDAO.insert(user);
     }
 }
