@@ -30,7 +30,8 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.exercisename.setText(exercisesList.get(position).getExerciseName());
+        holder.exerciseName.setText(exercisesList.get(position).getExerciseName());
+        holder.exerciseDescription.setText(exercisesList.get(position).getExerciseDescription());
     }
 
     @Override
@@ -39,11 +40,11 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView exercisename,muscleGroupText;
+        private TextView exerciseName,exerciseDescription;
         public MyViewHolder(@NonNull View view) {
             super(view);
-            exercisename = view.findViewById(R.id.dayTextView);
-
+            exerciseName = view.findViewById(R.id.workoutNameTextView);
+            exerciseDescription = view.findViewById(R.id.workoutDescriptionTextView);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

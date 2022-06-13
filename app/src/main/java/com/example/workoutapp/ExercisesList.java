@@ -1,15 +1,21 @@
 package com.example.workoutapp;
 
 public class ExercisesList {
-    private String exercisename;
-
-
+    private String exerciseName, exerciseDescription;
 
     public String getExerciseName() {
-        return exercisename;
+        return exerciseName;
     }
 
     public void setExerciseName(String exerciseName) {
-        this.exercisename = exerciseName;
+        this.exerciseName = exerciseName;
+    }
+
+    public String getExerciseDescription() {
+        return exerciseDescription;
+    }
+
+    public void setExerciseDescription(String exerciseDescription) {
+        this.exerciseDescription = exerciseDescription;
     }
 }

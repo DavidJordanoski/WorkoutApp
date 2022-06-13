@@ -120,6 +120,8 @@ public class ProgramActivity extends AppCompatActivity implements OnClickListene
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(ProgramActivity.this,WorkoutDetailsActivity.class);
+        intent.putExtra("WorkoutName",exercisesLists.get(position).getExerciseName());
+        intent.putExtra("WorkoutDescription",exercisesLists.get(position).getExerciseDescription());
         startActivity(intent);
     }
 }
